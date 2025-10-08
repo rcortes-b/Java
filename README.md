@@ -21,3 +21,16 @@ Java Naming Convention:
 
 	using domain name + app name + dirs name
 	i.e --> me.rcortesb.avajlauncher
+
+	me/rcortes/avajlauncher/
+├── Main.java               // entry point
+├── models/
+│   ├── Aircraft.java
+│   └── Helicopter.java
+├── services/
+│   ├── WeatherTower.java
+│   └── SimulationService.java
+├── utils/
+│   └── Parser.java
+└── exceptions/
+    └── InvalidFileException.java
