@@ -22,4 +22,13 @@ public class Aircraft extends Flyable {
 	protected Coordinates getCoordinates() {
 		return coordinates;
 	}
+
+	@Override
+	public void updateConditions() {
+
+	}
+
+	//Debug mode
+	@Override
+	public void listFlyableData() {}
 }

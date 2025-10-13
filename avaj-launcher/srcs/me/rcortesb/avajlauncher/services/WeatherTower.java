@@ -8,15 +8,18 @@ import java.util.Scanner;
 
 public class WeatherTower extends Tower {
 	private static WeatherTower weatherTower;
+	private static int numOfSimulations;
 	
 	public WeatherTower() {}
-
 	public void registerFleet(String fileName) {
 		try {
 			File fleetData = new File(fileName);
 			Scanner myReader = new Scanner(fleetData);
+			String data = myReader.nextLine();
+			this.numOfSimulations = Parser.getParser().parseSimulationLoop(data);
+			System.out.println(this.numOfSimulations);
 			while (myReader.hasNextLine()) {
-				String data = myReader.nextLine();
+				data = myReader.nextLine();
 				this.register(Parser.getParser().addAircraftToFleet(data));
 				
 			}
@@ -25,7 +28,11 @@ public class WeatherTower extends Tower {
 			System.exit(1);
 		}
 	}
-
+	public void listFleet() {
+		for (Flyable f : this.getObservers()) {
+			f.listFlyableData();
+		}
+	}
 	public String getWeather(Coordinates p_coordinates) {
 		return WeatherProvider.getWeatherProvider().getCurrentWeather(p_coordinates);
 	}

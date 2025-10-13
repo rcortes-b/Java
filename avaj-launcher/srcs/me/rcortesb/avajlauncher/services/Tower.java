@@ -7,6 +7,10 @@ import me.rcortesb.avajlauncher.models.Baloon;
 public class Tower {
 	private List<Flyable> observers = new ArrayList<>();
 
+	public List<Flyable> getObservers() {
+		return observers;
+	}
+
 	public void register(Flyable p_flyable) {
 		this.observers.add(p_flyable);
 		//System.out.println("Tower says: ");

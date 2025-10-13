@@ -11,6 +11,7 @@ public class Main {
 		WeatherTower tower = new WeatherTower();
 
 		tower.registerFleet(args[0]);
+		tower.listFleet();
 		/*
 		This method will call changeWeather() as many times as it is specified in the scenerio.txt
 		tower.doSimulation();
