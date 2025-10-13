@@ -2,7 +2,7 @@
 
 echo "Compilation has just started"
 
-find * -name "*.java" > sources.txt
+#find * -name "*.java" > sources.txt
 
 javac -d bin @sources.txt
 
@@ -18,7 +18,7 @@ then
 	echo "Great! Program will run in 2 seconds"
 	sleep 2
 	echo "\n\n\n"
-	java -cp bin me.rcortesb.avajlauncher.Main
+	java -cp bin me.rcortesb.avajlauncher.Main scenario.txt
 else
 	echo "Bye!"
 fi

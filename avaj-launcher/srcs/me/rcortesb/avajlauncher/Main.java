@@ -1,13 +1,27 @@
 package me.rcortesb.avajlauncher;
-import me.rcortesb.avajlauncher.models.Test;
+import me.rcortesb.avajlauncher.services.WeatherTower;
 
 public class Main {
 
 	public static void main(String[] args){
-		Test f = new Test();
-		System.out.println("hi");
-		f.helloWorld();
-		// some code here in the main() method
+		if (args.length != 1) {
+			System.out.println("Invalid arguments.");
+			return ;
+		}
+		WeatherTower tower = new WeatherTower();
+
+		tower.registerFleet(args[0]);
+		/*
+		This method will call changeWeather() as many times as it is specified in the scenerio.txt
+		tower.doSimulation();
+		*/
+		/*
+			Register WeatherTower
+
+			Read and Parse file
+
+			Do simulation (changeWeather)
+		*/
 	}
 
 }
