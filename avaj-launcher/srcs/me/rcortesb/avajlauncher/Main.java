@@ -9,7 +9,7 @@ public class Main {
 			return ;
 		}
 		WeatherTower tower = new WeatherTower();
-
+		Simulation.getSimulator().generateFile();
 		tower.registerFleet(args[0]);
 		Simulation.getSimulator().doSimulation(tower);
 		/*

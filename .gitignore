@@ -1,5 +1,5 @@
 *.class
 bin/
 sources.txt
-full_srcs.txt
 scenario.txt
+simulation.txt

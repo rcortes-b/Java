@@ -1,6 +1,7 @@
 package me.rcortesb.avajlauncher.models;
 import me.rcortesb.avajlauncher.utilitaries.Aircraft;
 import me.rcortesb.avajlauncher.utilitaries.Coordinates;
+import me.rcortesb.avajlauncher.utilitaries.Simulation;
 import me.rcortesb.avajlauncher.services.WeatherProvider;
 
 public class Balloon extends Aircraft {
@@ -12,23 +13,23 @@ public class Balloon extends Aircraft {
 	public void updateConditions() {
 		String weather = this.weatherTower.getWeather(this.getCoordinates());
 		this.getCoordinates().setBalloonCoords(weather);
-		System.out.print(this.getFullName() + ": ");
+		Simulation.getSimulator().registerLogs(this.getFullName() + ": ");
 		switch (weather) {
 			case "RAIN":
-						System.out.println("I'm a Balloon and it's raining!");
+						Simulation.getSimulator().registerLogs("I'm a Balloon and it's raining!\n");
 						break;
 			case "FOG":
-						System.out.println("I'm a Balloon and there is fog!");
+						Simulation.getSimulator().registerLogs("I'm a Balloon and there is fog!\n");
 						break;
 			case "SUN":
-						System.out.println("I'm a Balloon and it's a sunny day!");
+						Simulation.getSimulator().registerLogs("I'm a Balloon and it's a sunny day!\n");
 						break;
 			case "SNOW":
-						System.out.println("I'm a Balloon and it's snowing!");
+						Simulation.getSimulator().registerLogs("I'm a Balloon and it's snowing!\n");
 						break;
 		}
 		if (this.getCoordinates().invalidHeight()) {
-			System.out.println("Balloon is messed up!");
+			Simulation.getSimulator().registerLogs(this.getFullName() + ": Balloon is messed up!\n");
 			this.weatherTower.unregister(this);
 		}
 	}

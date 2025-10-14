@@ -4,6 +4,7 @@ import me.rcortesb.avajlauncher.utilitaries.Flyable;
 import me.rcortesb.avajlauncher.utilitaries.Parser;
 import me.rcortesb.avajlauncher.utilitaries.Simulation;
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -22,7 +23,7 @@ public class WeatherTower extends Tower {
 				Flyable f = Parser.getParser().addAircraftToFleet(data);
 				f.registerTower(this);
 			}
-		} catch (Exception e) {
+		} catch (IOException e) {
 			System.out.println("Something went wrong with the file!");
 			System.exit(1);
 		}
