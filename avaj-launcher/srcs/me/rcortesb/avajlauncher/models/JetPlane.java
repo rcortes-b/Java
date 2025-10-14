@@ -9,7 +9,27 @@ public class JetPlane extends Aircraft {
 
 	@Override
 	public void updateConditions() {
-		System.out.println("Jetplane Updated!");
+		String weather = this.weatherTower.getWeather(this.getCoordinates());
+		this.getCoordinates().setJetPlaneCoords(weather);
+		System.out.print(this.getFullName() + ": ");
+		switch (weather) {
+			case "RAIN":
+						System.out.println("I'm a JetPlane and it's raining!");
+						break;
+			case "FOG":
+						System.out.println("I'm a JetPlane and there is fog!");
+						break;
+			case "SUN":
+						System.out.println("I'm a JetPlane and it's a sunny day!");
+						break;
+			case "SNOW":
+						System.out.println("I'm a JetPlane and it's snowing!");
+						break;
+		}
+		if (this.getCoordinates().invalidHeight()) {
+			System.out.println("JetPlane is messed up!");
+			this.weatherTower.unregister(this);
+		}
 	}
 
 	@Override

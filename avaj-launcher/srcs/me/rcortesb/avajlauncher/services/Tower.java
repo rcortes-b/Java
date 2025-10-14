@@ -12,13 +12,19 @@ public class Tower {
 	}
 
 	public void register(Flyable p_flyable) {
-		this.observers.add(p_flyable);
+		this.observers.add(0, p_flyable);
 		System.out.println("Tower says: " + p_flyable.getFullName() + " registered to weather tower.");
 	}
 	public void unregister(Flyable p_flyable) {
-		observers.remove(p_flyable);
+		this.observers.remove(p_flyable);
 		System.out.println("Tower says: " + p_flyable.getFullName() + " unregistered from weather tower.");
 	}
 	protected void conditionChanged() {
+		for (int i = observers.size() - 1; i >= 0; i--) {
+			Flyable item = observers.get(i);
+			item.updateConditions();
+		}
+		System.out.println("");
 	}
+
 }

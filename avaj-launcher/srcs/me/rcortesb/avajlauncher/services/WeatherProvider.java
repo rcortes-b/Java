@@ -11,6 +11,7 @@ public class WeatherProvider {
 		return weatherProvider;
 	}
 	public String getCurrentWeather(Coordinates p_coordinates) {
-		return (weather[(int)(Math.random() * 4)]);
+		int randomize = (int)(Math.random() * 4) * (p_coordinates.getLongitude() + p_coordinates.getLatitude()+ p_coordinates.getHeight());
+		return (weather[randomize % 4]);
 	}
 }
