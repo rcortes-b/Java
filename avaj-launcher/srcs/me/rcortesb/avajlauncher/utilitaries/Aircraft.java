@@ -1,6 +1,6 @@
 package me.rcortesb.avajlauncher.utilitaries;
 
-public class Aircraft extends Flyable {
+public abstract class Aircraft extends Flyable {
 	protected long id;
 	protected String name;
 	protected Coordinates coordinates;
@@ -23,12 +23,4 @@ public class Aircraft extends Flyable {
 		return coordinates;
 	}
 
-	@Override
-	public void updateConditions() {
-
-	}
-
-	//Debug mode
-	@Override
-	public void listFlyableData() {}
 }

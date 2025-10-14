@@ -1,10 +1,10 @@
 package me.rcortesb.avajlauncher.utilitaries;
-import me.rcortesb.avajlauncher.models.Baloon;
+import me.rcortesb.avajlauncher.models.Balloon;
 import java.text.ParseException;
 
 public class Parser {
 	private static Parser parser = new Parser();
-	private static String[] aircraftType = {"Helicopter", "Baloon", "JetPlane"};
+	private static String[] aircraftType = {"Helicopter", "Balloon", "JetPlane"};
 	
 	private Parser() {}
 	private static boolean typeIsValid(String type) {

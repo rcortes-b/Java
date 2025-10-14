@@ -12,6 +12,11 @@ public class JetPlane extends Aircraft {
 		System.out.println("Jetplane Updated!");
 	}
 
+	@Override
+	public String getFullName() {
+		return ("JetPlane#" + this.getName() + "(" + this.getID() + ")");
+	}
+
 	//Debug mode
 	@Override
 	public void listFlyableData() {

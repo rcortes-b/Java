@@ -11,6 +11,8 @@ public abstract class Flyable {
 		this.weatherTower.register(this);
 	}
 
+	public abstract String getFullName();
+
 	//Debug mode
 	public abstract void listFlyableData();
 }

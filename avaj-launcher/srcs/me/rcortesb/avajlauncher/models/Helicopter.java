@@ -12,6 +12,11 @@ public class Helicopter extends Aircraft {
 		System.out.println("Helicopter Updated!");
 	}
 
+	@Override
+	public String getFullName() {
+		return ("Helicopter#" + this.getName() + "(" + this.getID() + ")");
+	}
+
 	//Debug mode
 	@Override
 	public void listFlyableData() {
