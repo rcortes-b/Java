@@ -54,7 +54,7 @@ public class Parser {
 	
 	public Flyable addAircraftToFleet(String data) {
 		try {
-			String[] lineSplitted = data.split(" ");
+			String[] lineSplitted = data.split(" \0\r\n\t");
 			if (lineSplitted.length != 5 || typeIsValid(lineSplitted[0]) == false)
 				throw new Exception();
 
