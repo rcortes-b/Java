@@ -34,3 +34,11 @@ Java Naming Convention:
 │   └── Parser.java
 └── exceptions/
     └── InvalidFileException.java
+
+
+How did i manage the avaj-launcher testing:
+	- Test for bad input
+	- Test for changeWeather with the start values of aircraft + expected final value. If the changeWeather ran 5 times, and it SUN, SNOW,... i expect it to be "x".
+	- Test for each line, look for its full name, and the condition. Something like a key/value but checking that its randomWeather generated is respected
+
+***Maybe create a new branch called testing-branch
