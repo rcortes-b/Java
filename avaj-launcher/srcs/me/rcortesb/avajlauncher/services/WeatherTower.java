@@ -16,7 +16,7 @@ public class WeatherTower extends Tower {
 		try {
 			File fleetData = new File(fileName);
 			if (!fleetData.exists())
-				throw Exception();
+				throw new IOException();
 			Scanner myReader = new Scanner(fleetData);
 			String data = myReader.nextLine();
 			Simulation.getSimulator().setNumOfSimulations(Parser.getParser().parseSimulationLoop(data));

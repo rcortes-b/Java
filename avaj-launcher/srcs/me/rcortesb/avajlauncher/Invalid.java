@@ -1,7 +1,7 @@
 package me.rcortesb.avajlauncher;
 import me.rcortesb.avajlauncher.services.WeatherTower;
 import me.rcortesb.avajlauncher.utilitaries.Simulation;
-public class Main {
+public class Invalid {
 
 	public static void main(String[] args){
 		if (args.length != 1) {
